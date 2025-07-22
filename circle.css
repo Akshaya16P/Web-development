@@ -1,0 +1,27 @@
+body{
+    width: 100%;
+    height: 100shv;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.child{
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    border-radius: 50%;
+    transform: rotateZ(30deg) translateX(200px);
+    animation-name: myanimation;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+@keyframes myanimation {
+    0%{
+        transform: rotateZ(0deg) translateX(200px);
+    }
+    100%{
+        transform: rotateZ(360deg) translateX(200px);
+    }
+}

@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Block Person Drawing</title>
+  <style>
+    body {
+      background: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .figure {
+      position: relative;
+      width: 200px;
+    }
+
+    .head {
+      width: 80px;
+      height: 80px;
+      border: 3px solid black;
+      border-radius: 50%;
+      position: absolute;
+      top: 0;
+      left: 60px;
+    }
+
+    .eye {
+      width: 10px;
+      height: 10px;
+      background: black;
+      border-radius: 50%;
+      position: absolute;
+    }
+
+    .eye.left {
+      top: 20px;
+      left: 15px;
+    }
+
+    .eye.right {
+      top: 20px;
+      right: 15px;
+    }
+
+    .mouth {
+      position: absolute;
+      width: 30px;
+      height: 15px;
+      border-bottom: 3px solid black;
+      border-radius: 0 0 30px 30px;
+      bottom: 15px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .body {
+      width: 90px;
+      height: 100px;
+      border: 3px solid black;
+      position: absolute;
+      top: 85px;
+      left: 55px;
+    }
+
+    .pocket {
+      width: 15px;
+      height: 15px;
+      border: 2px solid black;
+      position: absolute;
+      top: 100px;
+      left: 120px;
+    }
+
+    .buttons {
+      position: absolute;
+      top: 100px;
+      left: 95px;
+    }
+
+    .button {
+      width: 5px;
+      height: 5px;
+      background: black;
+      border-radius: 50%;
+      margin: 6px 0;
+    }
+
+    .arms {
+      position: absolute;
+      top: 100px;
+      left: -60px;
+      width: 320px;
+      height: 10px;
+      background: transparent;
+    }
+
+    .arm {
+      width: 90px;
+      height: 10px;
+      background: black;
+      position: absolute;
+      top: 0;
+    }
+
+    .arm.left {
+      left: 0;
+    }
+
+    .arm.right {
+      right: 0;
+    }
+
+    .hand {
+      width: 30px;
+      height: 30px;
+      border: 3px solid black;
+      position: absolute;
+      top: -10px;
+      display: flex;
+      gap: 3px;
+      padding: 2px;
+    }
+
+    .hand.left {
+      left: -30px;
+      flex-direction: row-reverse;
+    }
+
+    .hand.right {
+      right: -30px;
+    }
+
+    .finger {
+      width: 5px;
+      height: 20px;
+      background: black;
+    }
+
+    .shorts {
+      width: 90px;
+      height: 40px;
+      border: 3px solid black;
+      border-top: none;
+      position: absolute;
+      top: 185px;
+      left: 55px;
+    }
+
+    .legs {
+      position: absolute;
+      top: 225px;
+      left: 65px;
+      display: flex;
+      gap: 15px;
+    }
+
+    .leg {
+      width: 20px;
+      height: 60px;
+      border: 3px solid black;
+    }
+
+    .boots {
+      position: absolute;
+      top: 285px;
+      left: 60px;
+      display: flex;
+      gap: 20px;
+    }
+
+    .boot {
+      width: 30px;
+      height: 20px;
+      border: 3px solid black;
+    }
+  </style>
+</head>
+<body>
+  <div class="figure">
+    <div class="head">
+      <div class="eye left"></div>
+      <div class="eye right"></div>
+      <div class="mouth"></div>
+    </div>
+
+    <div class="body"></div>
+
+    <div class="pocket"></div>
+
+    <div class="buttons">
+      <div class="button"></div>
+      <div class="button"></div>
+      <div class="button"></div>
+    </div>
+
+    <div class="arms">
+      <div class="arm left"></div>
+      <div class="arm right"></div>
+
+      <div class="hand left">
+        <div class="finger"></div>
+        <div class="finger"></div>
+        <div class="finger"></div>
+      </div>
+
+      <div class="hand right">
+        <div class="finger"></div>
+        <div class="finger"></div>
+        <div class="finger"></div>
+      </div>
+    </div>
+
+    <div class="shorts"></div>
+
+    <div class="legs">
+      <div class="leg"></div>
+      <div class="leg"></div>
+    </div>
+
+    <div class="boots">
+      <div class="boot"></div>
+      <div class="boot"></div>
+    </div>
+  </div>
+</body>
+</html>

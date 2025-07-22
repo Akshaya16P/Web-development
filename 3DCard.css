@@ -1,0 +1,43 @@
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+.grandparent{
+    perspective: 200px;
+}
+.parent{
+    width: 150px;
+    height: 150px;
+    top: 0px;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 1s linear;
+}
+.parent:hover{
+    transform: rotateY(180deg);
+}
+.front{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    height: 150px;
+    background-color: orange;
+    flex-direction: column;
+    position: absolute;
+    backface-visibility: hidden;
+}
+.back{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    height: 150px;
+    background-color: rgb(207, 17, 49);
+    flex-direction: column;
+    position: absolute;
+    backface-visibility: hidden;
+    transform: rotateY(180deg);
+}

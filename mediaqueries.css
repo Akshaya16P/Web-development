@@ -1,0 +1,27 @@
+/* Default styles for desktop */
+body {
+  font-family: Arial, sans-serif;
+  font-size: 18px;
+  background-color: white;
+  color: black;
+  text-align: center;
+  padding: 50px;
+}
+
+/* Tablets and smaller devices (≤768px) */
+@media (max-width: 768px) {
+  body {
+    font-size: 16px;
+    background-color: #f0f0f0;
+    color: #333;
+  }
+}
+
+/* Mobile phones (≤480px) */
+@media (max-width: 480px) {
+  body {
+    font-size: 14px;
+    background-color: #e0e0e0;
+    color: #444;
+  }
+}

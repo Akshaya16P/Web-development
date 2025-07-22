@@ -1,0 +1,31 @@
+.image{
+    width:100px;
+    height:300px;
+}
+.parent{
+    width:100px;
+    border:1px solid black;
+    display:flex;
+    flex-direction: column;
+    align-items:center;
+    cursor:pointer;
+}
+.child1{
+    width:100px;
+    text-align:center;
+    padding:10px;
+}
+
+.child2{
+    display:none;
+}
+.submenu{
+    padding:5px;
+}
+.submenu:hover{
+    background-color:grey;
+    color:white;
+}
+.parent:hover .child2{
+    display:block;
+}

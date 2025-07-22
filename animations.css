@@ -1,0 +1,41 @@
+.demo{
+    width:100px;
+    height:100px;
+    background-color:black;
+    animation-name:myanimation;
+    animation-duration: 2s;
+    position:relative;
+    animation-iteration-count: 10;
+    animation-timing-function: ease-in;
+    animation-direction: alternate;
+}
+/* 
+.demo1{
+    width:100px;
+    height:100px;
+    background-color:rgb(210, 36, 36);
+    animation-name:myanimation;
+    animation-duration: 2s;
+    position:relative;
+    animation-iteration-count: 10;
+    animation-timing-function: ease-in-out;
+}
+.demo2{
+    width:100px;
+    height:100px;
+    background-color:rgb(16, 186, 96);
+    animation-name:myanimation;
+    animation-duration: 2s;
+    position:relative;
+    animation-iteration-count: 10;
+    animation-timing-function: ease-out;
+    animation-delay: 5s;
+} */
+@keyframes myanimation{
+    0%{
+        left:0px;
+    }
+    100%{
+        left:300px;
+    }
+}

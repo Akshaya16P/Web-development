@@ -1,0 +1,75 @@
+body{
+    width: 100%;
+    height: 800px;
+    background-color: black;
+
+}
+.room{
+    position: relative;
+    width: 800px;
+    height: 600px;
+    perspective: 1000px;
+    margin: 50px auto;
+    margin-top: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.wall{
+    position: absolute;
+    background-color: white;
+    box-shadow: 0px 0px 15px 10px grey;
+    border: 1px solid silver;
+}
+.wall-left{
+    top: 0;
+    left: 0;
+    width: 800px;
+    height: 600px;
+    transform: rotateY(90deg) translateX(-140px);
+    transform-origin: top left;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+.wall-right{
+    top: 0;
+    right: 0;
+    width: 800px;
+    height: 600px;
+    transform: rotateY(-90deg) translateX(140px);
+    transform-origin: top right;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.wall-back{
+    top: 90px;
+    left: 120px;
+    width: 560px;
+    height: 419px;
+    transform: translateZ(-200px);
+    /* box-shadow: 0px 0px 10px grey; */
+}
+
+.wall-floor{
+    bottom: 0;
+    left: 0;
+    width: 800px;
+    height: 800px;
+    transform: rotateX(90deg) translateY(140px);
+    transform-origin: bottom left;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+.wall-ceiling{
+    top: 0;
+    left: 0;
+    width: 800px;
+    height: 800px;
+    transform: rotateX(-90deg) translateY(-140px);
+    transform-origin: top left;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+}

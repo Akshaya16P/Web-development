@@ -1,0 +1,86 @@
+body {
+  margin: 0;
+  background: #000010;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.solar-system {
+  position: relative;
+  width: 800px;
+  height: 800px;
+}
+
+.sun {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background-color:rgb(200, 200, 24);
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  box-shadow: 0px 0px 10px yellow;
+  animation:sunrotate 2s linear infinite;
+}
+
+.orbit {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border: 1px dotted white;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.planet {
+  width: 40px;
+  height: 40px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  background-color: black;
+  left: 100%;
+  transform: translate(-50%, -50%);
+}
+
+.orbit1 { width: 120px; height: 120px; animation: rotate 4s linear infinite; }
+.orbit2 { width: 160px; height: 160px; animation: rotate 6s linear infinite; }
+.orbit3 { width: 200px; height: 200px; animation: rotate 8s linear infinite; }
+.orbit4 { width: 250px; height: 250px; animation: rotate 10s linear infinite; }
+.orbit5 { width: 320px; height: 320px; animation: rotate 14s linear infinite; }
+.orbit6 { width: 400px; height: 400px; animation: rotate 18s linear infinite; }
+.orbit7 { width: 480px; height: 480px; animation: rotate 22s linear infinite; }
+.orbit8 { width: 560px; height: 560px; animation: rotate 26s linear infinite; }
+
+/* Planet images */
+.mercury { background-image: url('../mercury.jpeg'); }
+.venus   { background-image: url('../venus.jpeg'); }
+.earth   { background-image: url('../earth.jpeg'); }
+.mars    { background-image: url('../mars.jpeg'); }
+.jupiter { background-image: url('../jupiter.jpeg'); }
+.saturn  { background-image: url('../saturn.jpeg'); }
+.uranus  { background-image: url('../uranus.jpeg'); }
+.neptune { background-image: url('../neptune.jpeg'); }
+
+@keyframes rotate {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+@keyframes sunrotate {
+  from{
+    box-shadow: 0px 0px 10px yellow;
+  }
+  to{
+   box-shadow: 0px 0px 10px red;
+  }
+}

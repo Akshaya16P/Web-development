@@ -1,0 +1,11 @@
+.He_loo {
+    width: 500px;
+    height: 500px;
+    border:2px solid rgb(239, 69, 69);
+    /* background-image: url("./Rotating_earth_\(large\).gif"); */
+    /* background-repeat: no-repeat;
+    background-size: 50% 50%;  */
+    font-size:40px;
+    -webkit-text-fill-color: turquoise;
+}
+

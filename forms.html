@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Forms</title>
+    <script>
+        function fun(event){
+            event.preventDefault();
+        }
+    </script>
+</head>
+<body>
+    <h1>Application Form</h1>
+
+    <form>
+        <!-- Name Fields -->
+        <label>First Name:</label>
+        <input type="text"/>
+        <br /><br />
+
+        <label>Last Name:</label>
+        <input type="text"/>
+        <br /><br />
+
+        <!-- DOB and Age -->
+        <label>Date of Birth:</label>
+        <input type="date"/>
+        <br /><br />
+
+        <label>Age:</label>
+        <input type="number"/>
+        <br /><br />
+
+        <!-- Gender -->
+        <label>Gender:</label>
+        <select name="gender">
+            <option>Male</option>
+            <option>Female</option>
+            <option>Other</option>
+        </select>
+        <br /><br />
+
+        <!-- Email -->
+        <label>Email Address:</label>
+        <input type="email" name="email" placeholder="Enter Email address" />
+        <br /><br />
+
+        <!-- Position -->
+        <label>Positions Available:</label><br />
+        <input type="radio" name="position" value="Junior Developer" />
+        <label>Junior Developer</label><br />
+        <input type="radio" name="position" value="Mid-level Developer" />
+        <label>Mid-level Developer</label><br />
+        <input type="radio" name="position" value="Senior Developer" />
+        <label>Senior Developer</label>
+        <br /><br />
+
+        <!-- Programming Languages -->
+        <label>Programming Languages:</label><br />
+        <input type="checkbox" name="language" value="Java" />
+        <label>Java</label><br />
+        <input type="checkbox" name="language" value="JavaScript" />
+        <label>JavaScript</label><br />
+        <input type="checkbox" name="language" value="Python" />
+        <label>Python</label>
+        <br /><br />
+
+        <!-- Password Fields -->
+        <label>Password:</label>
+        <input type="password" name="password" />
+        <br /><br />
+
+        <label>Confirm Password:</label>
+        <input type="password" name="confirmPassword" />
+        <br /><br />
+
+        <!-- Form Buttons -->
+        <input type="submit" value="Submit" onclick="fun(event)"/>
+        <input type="reset" value="Reset" />
+    </form>
+</body>
+</html>

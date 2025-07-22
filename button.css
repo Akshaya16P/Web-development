@@ -1,0 +1,47 @@
+body{
+    display:flex;
+    justify-content: center;
+    align-items:center;
+    height:100svh;
+}
+.demo{
+    position:relative;
+    overflow:hidden;
+    z-index:1;
+    width:80px;
+    height:50px;
+    display:flex;
+    justify-content: center;
+    align-items:center;
+    border:1px solid black;
+    box-shadow:3px 3px 4px yellowgreen;
+    /* border-radius:25%; */
+
+}
+.demo::before{
+    position:absolute;
+    content:"";
+    height:100%;
+    width:100px;
+    background-color:aqua;
+    transform:translateX(-100px) skew(20deg);
+    transition: transform .9s linear;
+    z-index:-1;
+}
+.demo::after{
+    position:absolute;
+    content:"";
+    height:100px;
+    width:100px;
+    background-color:rgb(199, 169, 227);
+    transform:translateX(100px) skew(20deg);
+    transition: transform .9s linear;
+    z-index:-1;
+}
+
+.demo:hover::before{
+    transform:translateX(-50px) skew(10deg);
+}
+.demo:hover::after{
+    transform:translateX(50px) skew(10deg);
+}

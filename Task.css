@@ -1,0 +1,181 @@
+/* Full-screen scene */
+.scene {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Sky area */
+.plane {
+    width: 100vw;
+    height: 100vh;
+    background: white;
+    position: absolute;
+    top: 0;
+    left: 0;
+    animation: myplane 3s linear infinite;
+    z-index: 0;
+}
+
+@keyframes myplane {
+    from {
+        background: white;
+    }
+    to {
+        background: linear-gradient(blue, white);
+    }
+}
+
+/* Sun */
+.sun {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    position: absolute;
+    background: #FFA500;
+    left: 80%;
+    top: 50px;
+    box-shadow: 0px 0px 30px rgb(237, 13, 13);
+    animation: mysun 3s linear infinite;
+    z-index: 1;
+}
+
+@keyframes mysun {
+    from {
+        box-shadow: 0px 0px 30px rgb(237, 13, 13);
+        background: #FFA500;
+    }
+    to {
+        box-shadow: 0px 0px 10px white;
+        background: white;
+    }
+}
+
+/* Tree structure */
+.tree {
+    position: absolute;
+    bottom: 200px; /* visible above road */
+    z-index: 2;
+}
+
+.tree1 {
+    left: 100px;
+}
+
+.tree2 {
+    left: 300px;
+}
+
+.trunk {
+    width: 18px;
+    height: 100px;
+    background-color: sienna;
+}
+
+.leaves {
+    position: relative;
+    height: 40px;
+    margin-bottom: -20px;
+}
+
+.leaf {
+    width: 40px;
+    height: 40px;
+    background-color: rgb(20, 207, 135);
+    border-radius: 50%;
+    position: absolute;
+}
+
+.left {
+    left: -35px;
+}
+
+.center {
+    left: -12px;
+    top: -30px;
+}
+
+.right {
+    left: 12px;
+    top: -2px;
+}
+
+/* Road */
+.road {
+    width: 100%;
+    height: 200px;
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
+    background: #2e2e2e;
+    position: absolute;
+    bottom: 0;
+    z-index: 3;
+}
+
+.strip-1, .strip-2, .strip-3, .strip-4, .strip-5, .strip-6 {
+    width: 100px;
+    height: 30px;
+    background-color: white;
+    position: absolute;
+    top: 85px;
+}
+
+.strip-1 { left: 100px; }
+.strip-2 { left: 300px; }
+.strip-3 { left: 500px; }
+.strip-4 { left: 700px; }
+.strip-5 { left: 900px; }
+.strip-6 { left: 1100px; }
+
+/* Car */
+.car {
+    width: 200px;
+    height: 50px;
+    background-color: red;
+    border-radius: 20px;
+    position: absolute;
+    top: 15px;
+    left: -250px;
+    animation: mycar 3s linear infinite;
+    z-index: 4;
+}
+
+@keyframes mycar {
+    from {
+        left: -250px;
+    }
+    to {
+        left: 100vw;
+    }
+}
+
+/* Car roof */
+.roof {
+    position: relative;
+    top: -40px;
+    left: -20px;
+    width: 250px;
+    height: 50px;
+    background-color: red;
+    clip-path: polygon(30% 100%, 40% 0%, 60% 0%, 70% 100%);
+    border: 3px solid darkred;
+}
+
+/* Wheels */
+.wheel {
+    width: 40px;
+    height: 40px;
+    background-color: black;
+    border-radius: 50%;
+    position: absolute;
+    bottom: -20px;
+}
+
+.front-wheel {
+    left: 20px;
+}
+
+.back-wheel {
+    right: 20px;
+}

@@ -1,0 +1,45 @@
+<html>
+<head>
+    <title>CV</title>
+    <script>
+        function showGender(value) {
+            console.log(value + ",selected");
+        }
+    </script>
+</head>
+<body>
+    <form>
+        <label>Name:</label>
+        <input type="text" placeholder="Name" name="name" />
+        <br /><br />
+
+        <label>Roll Number:</label>
+        <input type="text" placeholder="Roll Number" name="roll" />
+        <br /><br />
+
+        <label>Gender</label>
+        <input type="radio" name="Gender" value="Female" onchange="showGender(value)" />
+        <label>Female</label>
+        <input type="radio" name="Gender" value="Male" onchange="showGender(value)" />
+        <label>Male</label>
+        <input type="radio" name="Gender" value="Other" onchange="showGender(value)" />
+        <label>Other</label>
+        <br /><br />
+
+        <label>Phone Number</label>
+        <input type="number" name="phone" />
+        <br /><br />
+
+        <label>Age</label>
+        <input type="number" name="age" />
+        <br /><br />
+
+        <label>Email</label>
+        <input type="email" name="email" />
+        <br /><br />
+
+        <button type="button" onclick="console.log('Form submitted')">Submit</button>
+        <button type="reset">Reset</button>
+    </form>
+</body>
+</html>

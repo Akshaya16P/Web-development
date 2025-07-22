@@ -1,0 +1,47 @@
+<html>
+    <head>
+        <title>JAVA SCRIPT OBJECTS</title>
+    </head>
+    <body>
+        <script>
+        //STRINGS
+        s="  THUBU  "
+        console.log(s.indexOf("U"))
+        console.log(s.toLowerCase())
+        console.log(s.replace("U","A"))
+        console.log(s.lastIndexOf("U"))
+        console.log(s.replaceAll("U","A"))
+        console.log(s.split("."))
+        console.log(s.trim(" "))
+        //OBJETCS
+        var d={}
+        d[1]=2,
+        d["THUB"]=3
+        console.log(d)
+        console.log(d[1])
+        // console.log(delete d[1])
+        console.log(Object.keys(d))
+        console.log(Object.values(d))
+        console.log(Object.entries(d))
+        Object.entries(d).map(ele=>{
+            console.log("KEY is :" ,ele[0],"VALUE is :",ele[1])
+        })
+        d={
+            "start":function(){
+                console.log("Hello")
+            }
+        }
+        console.log(d["start"])
+
+        //DATE
+        var e= new Date();
+        console.log(e)
+        console.log(e.getDate())
+        console.log(e.getDay())
+        console.log(e.getFullYear())
+        console.log(e.getHours())
+        console.log(e.getMilliseconds())
+        console.log(e.getSeconds())
+    </script>
+    </body>
+</html>

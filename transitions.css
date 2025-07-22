@@ -1,0 +1,12 @@
+body{
+    display:flex;
+    justify-content:center;
+}
+.demo{
+    width:200px;
+    height:200px;
+    background-color: red;
+    /* transform:translateY(100px,40px); */
+    transform:skewY(30deg);
+
+}

@@ -1,0 +1,104 @@
+/* NAMED COLORS
+/* 
+.name {
+  color: black;
+}
+
+.name-1 {
+  color: red;
+}
+
+.name-2 {
+  color: magenta;
+} 
+*/
+
+/* rgb colors */
+/* .para {
+    color: rgb(255, 0, 0);
+}
+
+.para-1 {
+    color: rgb(255,0,0.5);
+}
+
+.para-2 {
+    color: rgb(255,0,1);
+} */
+/* hexa colors */
+/* .para{
+    color: #000;
+}
+.para-1{
+    color:#fff;
+}
+.para-2{
+    color:#0f0;
+}
+.para-3{
+    color:#568322;
+} */
+ /* hsl colors */
+ /* .para{
+    color:hsl(40, 100%, 50%)
+ } */
+ /* hsla colors */
+  /* .para{
+    color:hsla(40, 100%, 50%,0.5)
+ }  */
+/* .para{
+    color:rgb(255, 0, 0)
+}
+.para-1{
+    color:rgb(170, 40, 20)
+}
+.para-2{
+    color:hsl(0, 86%, 47%)
+}
+.para-3{
+    color:rgb(198, 66, 66)
+}
+.para-4{
+    color:rgb(169, 28, 28)
+}
+ .para{
+    color: rgb(0, 0, 255);         /* Pure Blue */
+/* } */
+
+/* .para-1 {
+    color: rgb(30, 144, 255);      /* Dodger Blue */
+}
+
+.para-2{
+    color: rgb(70, 130, 180);      /* Steel Blue */
+}
+
+.para-3 {
+    color: rgb(100, 149, 237);     /* Cornflower Blue */
+}
+
+.para-4 {
+    color: hsl(210, 100%, 40%);    Strong Blue via HSL
+/* } */ */
+/* .para{
+    text-align: right;
+}
+.para-1{
+    text-align-last:right;
+}
+.para-2{
+    text-align-last:left;
+}
+.para-3{
+    text-align:center;
+} */
+/* .para-4{ */
+    /* text-align:justify;
+    box-direction:rtl; */
+    /* text-decoration-line:underline overline line-through;
+    direction: rtl;
+    text-decoration-color: rgb(168, 17, 166);
+    text-decoration-style: double;
+    text-decoration-thickness:2px; */
+    text-decoration: underline red dotted 2px;
+}

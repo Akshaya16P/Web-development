@@ -1,0 +1,517 @@
+:root {
+  --primary: #e83e8c;
+  --secondary: #ff85a2;
+  --light: #eedce4;
+  --dark: #343a40;
+  --text: #495057;
+  --pink: #f8c8dc;
+  --shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+  text-decoration: none;
+  outline: none;
+  border: none;
+  transition: all 0.2s linear;
+}
+
+html {
+  font-size: 62.5%;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--light);
+  color: var(--text);
+}
+
+section {
+  padding: 2rem 9%;
+}
+
+.heading {
+  text-align: center;
+  font-size: 4rem;
+  color: var(--dark);
+  padding: 1rem;
+  margin: 2rem 0;
+}
+
+.heading span {
+  color: var(--primary);
+}
+
+.btn {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 1rem 3rem;
+  background: var(--primary);
+  color: var(--white);
+  font-size: 1.7rem;
+  border-radius: 5rem;
+  cursor: pointer;
+  box-shadow: var(--shadow);
+}
+
+.btn:hover {
+  background: var(--secondary);
+  transform: translateY(-3px);
+}
+
+/* ===== HEADER STYLES ===== */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: var(--white);
+  padding: 2rem 9%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 1000;
+  box-shadow: var(--shadow);
+}
+
+header .logo {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: var(--dark);
+}
+
+header .logo span {
+  color: var(--primary);
+}
+
+header .navbar a {
+  font-size: 1.7rem;
+  margin-left: 2rem;
+  color: var(--dark);
+}
+
+header .navbar a:hover {
+  color: var(--primary);
+}
+
+header .icons a {
+  font-size: 2.5rem;
+  color: var(--dark);
+  margin-left: 2rem;
+}
+
+header .icons a:hover {
+  color: var(--primary);
+}
+
+#menu-toggle {
+  display: none;
+}
+
+header .fa-bars {
+  font-size: 3rem;
+  color: var(--dark);
+  cursor: pointer;
+  display: none;
+}
+
+/* ===== HOME SECTION ===== */
+.home {
+  display: flex;
+  align-items: center;
+  min-height: 100vh;
+  background: url('https://static.vecteezy.com/system/resources/thumbnails/054/917/113/small/pink-tulip-bouquet-on-light-pink-background-for-greeting-card-design-with-copy-space-featuring-vibrant-flowers-in-a-transparent-vase-perfect-for-spring-celebrations-and-floral-decor-aesthetics-photo.jpeg') no-repeat;
+  background-size: cover;
+  background-position: center;
+  padding-top: 10rem;
+}
+
+.home .content {
+  max-width: 50rem;
+  background:#ece7e9;
+  padding: 3rem;
+  border-radius: 1rem;
+}
+
+.home .content h3 {
+  font-size: 5rem;
+  color: var(--dark);
+}
+
+.home .content span {
+  font-size: 2.5rem;
+  color: var(--primary);
+  padding: 1rem 0;
+  line-height: 1.5;
+  display: block;
+}
+
+.home .content p {
+  font-size: 1.5rem;
+  color: var(--text);
+  padding: 1rem 0;
+  line-height: 1.5;
+}
+
+/* ===== ABOUT SECTION ===== */
+.about .row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.about .row .image-container {
+  flex: 1 1 40rem;
+  position: relative;
+}
+
+.about .row .image-container img {
+  width: 100%;
+  border: 1.5rem solid var(--white);
+  border-radius: 0.5rem;
+  box-shadow: var(--shadow);
+  height: 100%;
+  object-fit: cover;
+}
+
+.about .row .image-container h3 {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 0;
+  right: 0;
+  font-size: 3rem;
+  background: rgba(255, 255, 255, 0.8);
+  color: var(--dark);
+  text-align: center;
+  padding: 1rem 0;
+}
+
+.about .row .content {
+  flex: 1 1 40rem;
+}
+
+.about .row .content h3 {
+  font-size: 3rem;
+  color: var(--dark);
+}
+
+.about .row .content p {
+  font-size: 1.5rem;
+  color: var(--text);
+  padding: 1rem 0;
+  line-height: 1.5;
+}
+
+/* ===== BENEFITS SECTION ===== */
+.benefits .box-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+  gap: 2rem;
+}
+
+.benefits .box-container .box {
+  background: var(--white);
+  padding: 2rem;
+  border-radius: 0.5rem;
+  box-shadow: var(--shadow);
+  text-align: center;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.benefits .box-container .box img {
+  height: 6rem;
+}
+
+.benefits .box-container .box h3 {
+  font-size: 1.7rem;
+  color: var(--dark);
+}
+
+.benefits .box-container .box span {
+  font-size: 1.3rem;
+  color: var(--text);
+}
+
+/* ===== PRODUCTS SECTION ===== */
+.products .box-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+  gap: 2rem;
+}
+
+.products .box-container .box {
+  background: var(--white);
+  border-radius: 0.5rem;
+  box-shadow: var(--shadow);
+  padding: 2rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.products .box-container .box .discount {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  padding: 0.5rem 1rem;
+  background: var(--primary);
+  color: var(--white);
+  font-size: 1.5rem;
+  border-radius: 0.5rem;
+}
+
+.products .box-container .box .image {
+  padding: 2rem 0;
+}
+
+.products .box-container .box .image img {
+  height: 20rem;
+}
+
+.products .box-container .box .content h3 {
+  font-size: 2rem;
+  color: var(--dark);
+}
+
+.products .box-container .box .content .price {
+  font-size: 2rem;
+  color: var(--primary);
+  font-weight: bold;
+}
+
+.products .box-container .box .content .price span {
+  font-size: 1.5rem;
+  color: var(--text);
+  text-decoration: line-through;
+}
+
+/* ===== REVIEW SECTION ===== */
+.review .box-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+  gap: 2rem;
+}
+
+.review .box-container .box {
+  background: var(--white);
+  border-radius: 0.5rem;
+  box-shadow: var(--shadow);
+  padding: 2rem;
+  position: relative;
+}
+
+.review .box-container .box .stars {
+  margin-bottom: 1.5rem;
+}
+
+.review .box-container .box .stars i {
+  color: var(--primary);
+  font-size: 1.7rem;
+}
+
+.review .box-container .box p {
+  font-size: 1.5rem;
+  color: var(--text);
+  line-height: 1.5;
+  margin-bottom: 2rem;
+}
+
+.review .box-container .box .user {
+  display: flex;
+  align-items: center;
+}
+
+.review .box-container .box .user img {
+  height: 6rem;
+  width: 6rem;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 1.5rem;
+}
+
+.review .box-container .box .user h3 {
+  font-size: 1.7rem;
+  color: var(--dark);
+}
+
+.review .box-container .box .user span {
+  font-size: 1.3rem;
+  color: var(--text);
+}
+
+.review .box-container .box .fa-quote-right {
+  position: absolute;
+  bottom: 2rem;
+  right: 2rem;
+  font-size: 5rem;
+  color: var(--primary);
+  opacity: 0.1;
+}
+
+/* ===== CONTACT SECTION ===== */
+.contact .row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+.contact .row form {
+  flex: 1 1 40rem;
+  background: var(--white);
+  padding: 2rem;
+  border-radius: 0.5rem;
+  box-shadow: var(--shadow);
+    background-image: url('https://www.boutiqueblooms.ca/cdn/shop/files/IMG_4352_jpg_1200x1200.jpg?v=1690390164');
+
+
+  /* Add these properties to control the background and form size */
+  background-size: cover;        /* Ensures image covers entire form */
+  background-position: center;   /* Centers the background image */
+  background-blend-mode: overlay; /* Blends image with white background */
+  min-height: 500px;            /* Sets minimum height */
+  width: 100%;                  /* Ensures full width within container */
+  position: relative;           /* Needed for overlay effect */
+}
+
+/* Optional: Add a semi-transparent overlay to improve text readability */
+.contact .row form::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.7); /* White with 70% opacity */
+  border-radius: 0.5rem;
+  z-index: 0;
+}
+
+/* Make sure form content appears above the overlay */
+.contact .row form > * {
+  position: relative;
+  z-index: 1;
+}
+.contact .row form .box {
+  width: 100%;
+  margin: 1rem 0;
+  padding: 1.2rem 1.4rem;
+  font-size: 1.6rem;
+  color: var(--text);
+  background: #f7f7f7;
+  border-radius: 0.5rem;
+}
+
+.contact .row form textarea {
+  height: 15rem;
+  resize: none;
+}
+
+/* ===== FOOTER SECTION ===== */
+.footer {
+  background: var(--white);
+  padding: 2rem 9%;
+}
+
+.footer .box-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+  gap: 2rem;
+}
+
+.footer .box-container .box h3 {
+  font-size: 2rem;
+  color: var(--dark);
+  padding: 1rem 0;
+}
+
+.footer .box-container .box a {
+  display: block;
+  font-size: 1.5rem;
+  color: var(--text);
+  padding: 1rem 0;
+}
+
+.footer .box-container .box a:hover {
+  color: var(--primary);
+}
+
+.footer .credit {
+  text-align: center;
+  margin-top: 2rem;
+  padding: 2rem 0;
+  font-size: 1.7rem;
+  color: var(--text);
+  border-top: 0.1rem solid rgba(0, 0, 0, 0.1);
+}
+
+.footer .credit span {
+  color: var(--primary);
+}
+
+/* ===== MEDIA QUERIES ===== */
+@media (max-width: 991px) {
+  html {
+    font-size: 55%;
+  }
+  
+  header {
+    padding: 2rem;
+  }
+  
+  section {
+    padding: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  header .fa-bars {
+    display: block;
+  }
+  
+  header .navbar {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--white);
+    border-top: 0.1rem solid rgba(0, 0, 0, 0.1);
+    clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+  }
+  
+  header #menu-toggle:checked ~ .navbar {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
+  
+  header .navbar a {
+    margin: 1.5rem;
+    padding: 1.5rem;
+    background: #f7f7f7;
+    display: block;
+    border-radius: 0.5rem;
+  }
+  
+  .home .content h3 {
+    font-size: 4rem;
+  }
+  
+  .home .content span {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 450px) {
+  html {
+    font-size: 50%;
+  }
+  
+  .heading {
+    font-size: 3rem;
+  }
+}

@@ -1,0 +1,60 @@
+/* linear gradient */
+.first {
+    width: 200px;
+    height: 200px;
+    position: relative;
+    background-image: linear-gradient(
+        to bottom left,
+        violet,
+        indigo,
+        blue,
+        green,
+        yellow,
+        orange,
+        red
+    );
+}
+
+/* radial-gradient */
+.second {
+   width: 200px;
+    height: 200px;
+    background-image: radial-gradient(red, blue, green 100%);
+}
+
+/* repeating radial gradient */
+.second_repeating {
+  width: 200px;
+    height: 200px;
+    background-image: repeating-radial-gradient(
+        red 5%,
+        green 10%,
+        blue 15%
+    );
+}
+
+/* conic gradient */
+.third {
+   width: 200px;
+    height: 200px;
+    background-image: conic-gradient(at 50% 50%, red, green, black, yellow);
+    border-radius:50%;
+}
+/* box shadow */
+.fourth {
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
+    box-shadow: 3px 3px 15px 2px  black;
+    background-color: aquamarine;
+}
+/* text-shadow */
+.fifth{
+    position:relative;
+    top:150px;
+    width:500px;
+    height:350px;
+    font-size:60px;
+    color:rgb(186, 230, 27);
+    text-shadow:0px 0px 25px rgb(58, 135, 139);
+}

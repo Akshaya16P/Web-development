@@ -1,0 +1,31 @@
+.space{
+    height:250px;
+    width:1000px;
+      background:white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+.pass{
+    height:245px;
+    width:795px;
+    padding: 10px;
+    background: linear-gradient(135deg, #9610cb, #1c1f26);
+    position: relative;
+}
+.th{
+    width:100px;
+    height:100px;
+    border-radius:5%;
+    color:#9610cb;
+    position:relative;
+    border:3px solid rgb(221, 16, 214);
+    left:50px;
+    top:50px;
+}
+.text{
+    color:white;
+    font-size:45px;
+    position:relative;
+    left:20px;
+}
