@@ -1,0 +1,33 @@
+<html>
+    <head>
+        <title>DOM Updation</title>
+        <style>
+        .demo{
+            width:200px;
+            height:200px;
+            background-color:black;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="demo"></div>
+        <button onclick="fun()">LEFT</button>
+        <button onclick="fun1()">RIGHT</button>
+        <button onclick="fun2()">TOP</button>
+        <button onclick="fun3()">BOTTOM</button>
+        <script>
+            function fun(){
+                console.log(document.getElementsByClassName("demo")[0].style="background-color:black; position:absolute; left:0px;");
+            }
+            function fun1(){
+                console.log(document.getElementsByClassName("demo")[0].style="background-color:red; position:absolute; right:0px;");
+            }
+            function fun2(){
+                console.log(document.getElementsByClassName("demo")[0].style="background-color:yellow; position:absolute; top:0px;");
+            }
+            function fun3(){
+                 console.log(document.getElementsByClassName("demo")[0].style="background-color:blue;position:absolute; bottom:0px");
+            }
+        </script>
+    </body>
+</html>
