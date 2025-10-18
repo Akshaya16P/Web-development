@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Happy Birthday Abhiram 🎉</title>
+  <style>
+    :root {
+      --primary: #6a5acd;
+      --secondary: #ff6ec7;
+      --accent: #4be1ec;
+      --bg: #f9f9ff;
+      --dark: #222;
+      --light: #fff;
+    }
+    [data-theme="dark"] {
+      --bg: #181818;
+      --dark: #f9f9f9;
+      --light: #222;
+    }
+    body {
+      margin: 0;
+      font-family: "Poppins", sans-serif;
+      background: var(--bg);
+      color: var(--dark);
+      overflow-x: hidden;
+      transition: background 0.3s, color 0.3s;
+    }
+    header {
+      text-align: center;
+      padding: 2rem 1rem;
+    }
+    h1 {
+      font-size: 2.5rem;
+      margin: 0.5rem 0;
+      color: var(--primary);
+    }
+    .subtitle { font-size: 1.2rem; margin-bottom: 1rem; }
+    .btn {
+      padding: 10px 18px;
+      border: none;
+      border-radius: 25px;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: #fff; font-size: 1rem;
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+    .btn:hover { transform: scale(1.05); }
+    .countdown {
+      display: flex; justify-content: center;
+      margin-top: 1rem; gap: 15px; flex-wrap: wrap;
+    }
+    .timebox {
+      background: var(--light);
+      padding: 10px 15px;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      text-align: center;
+      min-width: 70px;
+    }
+    .carousel, .media-carousel {
+      display: flex; overflow-x: auto; gap: 10px;
+      scroll-snap-type: x mandatory; padding: 10px;
+    }
+    .carousel img, .media-carousel video {
+      flex: 0 0 auto;
+      width: 220px; height: 150px;
+      object-fit: cover;
+      border-radius: 12px;
+      scroll-snap-align: center;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    }
+    .card {
+      background: var(--light);
+      margin: 1rem auto;
+      padding: 1rem;
+      border-radius: 12px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      max-width: 900px;
+    }
+    .wish {
+      background: var(--bg);
+      padding: 0.8rem;
+      border-radius: 8px;
+      margin: 0.5rem 0;
+      border-left: 4px solid var(--secondary);
+    }
+    .modal {
+      position: fixed; inset: 0;
+      background: rgba(0,0,0,0.7);
+      display: none; align-items: center; justify-content: center;
+      z-index: 1000;
+    }
+    .dialog {
+      background: var(--light);
+      border-radius: 15px;
+      padding: 2rem;
+      text-align: center;
+      max-width: 500px;
+      width: 90%;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    }
+    canvas, #balloons { position: fixed; inset: 0; pointer-events: none; }
+    #balloons div {
+      position: absolute; bottom: -150px;
+      width: 40px; height: 60px;
+      border-radius: 50%;
+      animation: floatUp 8s linear infinite;
+    }
+    @keyframes floatUp {
+      0% { transform: translateY(0); opacity: 1; }
+      100% { transform: translateY(-110vh); opacity: 0; }
+    }
+    .theme-toggle { position: fixed; top: 15px; right: 15px; }
+  </style>
+</head>
+<body>
+  <canvas id="confetti"></canvas>
+  <canvas id="fireworks"></canvas>
+  <div id="balloons"></div>
+
+  <button class="btn theme-toggle" id="themeToggle">🌙</button>
+
+  <header>
+    <h1>Happy Birthday Abhiram 🎂</h1>
+    <p class="subtitle">Turning <span id="age"></span> this year — wishing you endless happiness!</p>
+    <button class="btn" id="revealBtn">Open Surprise</button>
+    <div class="countdown" id="countdown"></div>
+  </header>
+
+  <div class="card">
+    <h2>Photo Memories</h2>
+    <div class="carousel">
+      <img src="https://source.unsplash.com/400x300/?birthday,cake" alt="cake" />
+      <img src="https://source.unsplash.com/400x300/?friends,party" alt="friends" />
+      <img src="https://source.unsplash.com/400x300/?balloons" alt="balloons" />
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>Videos</h2>
+    <div class="media-carousel">
+      <video src="videos/party1.mp4" controls></video>
+      <video src="videos/party2.mp4" controls></video>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>Wish Wall</h2>
+    <div id="wishWall"></div>
+  </div>
+
+  <div class="modal" id="surpriseModal">
+    <div class="dialog">
+      <h2>🎊 Surprise Abhiram!</h2>
+      <p>Enjoy your special day with music, confetti, and fireworks 🎶🎆</p>
+      <audio id="song" src="birthday.mp3" preload="auto"></audio>
+      <div style="margin-top:1rem;display:flex;gap:10px;flex-wrap:wrap;justify-content:center;">
+        <button class="btn" id="playBtn">Play Song</button>
+        <button class="btn" id="fireBtn">Fireworks</button>
+        <button class="btn" id="moreConfetti">Confetti</button>
+        <button class="btn" id="closeModal">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const CONFIG = {
+      brotherName: "Abhiram",
+      birthYear: 2003,
+      birthday: "2025-08-27T00:00:00",
+      songSrc: "birthday.mp3",
+      wishes: [
+        { from: "You", text: "Happy Birthday Abhiram! Wishing you the best year ahead 🎉" },
+        { from: "Mom & Dad", text: "We’re so proud of you ❤️" },
+        { from: "Friends", text: "Let’s make more amazing memories 🥳" },
+      ],
+      balloons: 12,
+    };
+
+    // Age
+    document.getElementById('age').textContent = new Date().getFullYear() - CONFIG.birthYear;
+
+    // Wishes
+    const wishWall = document.getElementById('wishWall');
+    CONFIG.wishes.forEach(w => {
+      const div = document.createElement('div');
+      div.className = "wish";
+      div.innerHTML = `<p>“${w.text}” <br>— <b>${w.from}</b></p>`;
+      wishWall.appendChild(div);
+    });
+
+    // Countdown
+    const countdownEl = document.getElementById('countdown');
+    function updateCountdown() {
+      const target = new Date(CONFIG.birthday).getTime();
+      const now = Date.now();
+      let diff = Math.max(0, target - now);
+      const d = Math.floor(diff / (1000*60*60*24)); diff -= d*24*60*60*1000;
+      const h = Math.floor(diff / (1000*60*60)); diff -= h*60*60*1000;
+      const m = Math.floor(diff / (1000*60)); diff -= m*60*1000;
+      const s = Math.floor(diff / 1000);
+      countdownEl.innerHTML = [ ['Days', d], ['Hours', h], ['Min', m], ['Sec', s] ]
+        .map(([lbl, num]) => `<div class="timebox"><div>${String(num).padStart(2,'0')}</div><small>${lbl}</small></div>`).join('');
+    }
+    updateCountdown(); setInterval(updateCountdown, 1000);
+
+    // Modal + Surprise
+    const modal = document.getElementById('surpriseModal');
+    const song = document.getElementById('song');
+    document.getElementById('revealBtn').onclick = () => {
+      modal.style.display = "flex";
+      launchConfetti(); launchFireworks(); song.play();
+    };
+    document.getElementById('closeModal').onclick = () => { modal.style.display="none"; song.pause(); };
+    document.getElementById('playBtn').onclick = () => song.paused ? song.play() : song.pause();
+    document.getElementById('fireBtn').onclick = () => launchFireworks();
+    document.getElementById('moreConfetti').onclick = () => launchConfetti();
+
+    // Balloons
+    const balloons = document.getElementById('balloons');
+    for(let i=0;i<CONFIG.balloons;i++) {
+      const b=document.createElement('div');
+      b.style.left=Math.random()*100+'%';
+      b.style.background=`hsl(${Math.random()*360},70%,60%)`;
+      b.style.animationDuration=6+Math.random()*4+'s';
+      balloons.appendChild(b);
+    }
+
+    // Confetti
+    function launchConfetti() {
+      const canvas = document.getElementById('confetti');
+      const ctx = canvas.getContext('2d');
+      canvas.width = innerWidth; canvas.height = innerHeight;
+      let pieces = Array.from({length:100}, ()=>({
+        x: Math.random()*canvas.width, y: Math.random()*canvas.height,
+        w: 5+Math.random()*5, h: 10+Math.random()*10,
+        c: `hsl(${Math.random()*360},100%,50%)`,
+        s: Math.random()*3+2
+      }));
+      function draw() {
+        ctx.clearRect(0,0,canvas.width,canvas.height);
+        pieces.forEach(p=>{
+          ctx.fillStyle=p.c; ctx.fillRect(p.x,p.y,p.w,p.h);
+          p.y+=p.s; if(p.y>canvas.height) p.y=-10;
+        });
+        requestAnimationFrame(draw);
+      }
+      draw();
+      setTimeout(()=>ctx.clearRect(0,0,canvas.width,canvas.height),5000);
+    }
+
+    // Fireworks
+    function launchFireworks() {
+      const canvas = document.getElementById('fireworks');
+      const ctx = canvas.getContext('2d');
+      canvas.width=innerWidth; canvas.height=innerHeight;
+      let particles=[];
+      for(let i=0;i<100;i++){
+        const angle=Math.random()*2*Math.PI;
+        const speed=Math.random()*5+2;
+        particles.push({x:canvas.width/2,y:canvas.height/2,vx:Math.cos(angle)*speed,vy:Math.sin(angle)*speed,alpha:1});
+      }
+      function draw(){
+        ctx.fillStyle='rgba(0,0,0,0.2)'; ctx.fillRect(0,0,canvas.width,canvas.height);
+        particles.forEach(p=>{
+          ctx.fillStyle=`rgba(255,${Math.random()*255},0,${p.alpha})`;
+          ctx.beginPath(); ctx.arc(p.x,p.y,3,0,Math.PI*2); ctx.fill();
+          p.x+=p.vx; p.y+=p.vy; p.alpha-=0.01;
+        });
+        particles=particles.filter(p=>p.alpha>0);
+        if(particles.length) requestAnimationFrame(draw);
+      }
+      draw();
+    }
+
+    // Theme Toggle
+    const themeBtn = document.getElementById('themeToggle');
+    themeBtn.onclick = () => {
+      if(document.body.getAttribute('data-theme')==="dark"){
+        document.body.removeAttribute('data-theme'); themeBtn.textContent="🌙";
+      } else {
+        document.body.setAttribute('data-theme','dark'); themeBtn.textContent="☀️";
+      }
+    };
+  </script>
+</body>
+</html>

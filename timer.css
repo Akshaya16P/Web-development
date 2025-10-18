@@ -1,0 +1,30 @@
+body{
+    /* background-color: black; */
+    font-family: Arial, sans-serif;
+}
+
+.clock-div{
+    width:500px;
+    height:500px; 
+    display:flex;
+    justify-content: center;
+    align-items:center;
+    gap:10px;
+    margin-top: 50px;
+    margin-left: 80px;
+    margin-bottom: 20px;
+}
+.minutes,.seconds{
+    display: flex;  
+    width:40%;
+    height:40%;
+    border-radius: 50%;
+    border:3px solid red;
+    background-color: rgb(255, 254, 254);
+    margin-bottom: 10px;
+    gap:10px;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}

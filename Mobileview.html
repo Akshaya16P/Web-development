@@ -1,0 +1,26 @@
+<html>
+    <head>
+        <title>MOBILE VIEW</title>
+        <link rel="stylesheet" href="Mobileview.css" />
+
+    </head>
+    <body>
+        <span class="menu" onclick="fun1()">&#9776;</span>
+        <div class="mobile-options">
+            <div class="wrong" onclick="fun()">&times;</div>
+            <div>Home</div>
+            <div>About</div>
+            <div>Products</div>
+            <div>Pricing</div>
+            <div>Contact</div>
+        </div>
+        <script>
+            function fun(){
+                document.getElementsByClassName("mobile-options")[0].style="left:-200px";
+            }
+            function fun1(){
+                document.getElementsByClassName("mobile-options")[0].style="left:0px";
+            }
+        </script>
+    </body>
+</html>

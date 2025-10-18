@@ -1,0 +1,19 @@
+<html>
+<head>
+    <title>Test</title>
+</head>
+<body>
+    <script>
+        // Your DOM manipulation code
+        let newDiv = document.createElement("div");
+        newDiv.textContent = "This is a new div";
+        document.body.appendChild(newDiv);
+
+        setTimeout(() => {
+            document.body.removeChild(newDiv);
+        }, 2000);
+    </script>
+</body>
+</html>
+
+

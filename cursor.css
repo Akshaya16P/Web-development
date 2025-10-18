@@ -1,0 +1,15 @@
+.circle{
+    width:30px;
+    height:30px;
+    border-radius:50%;
+    border:2px solid black;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+.circle-1{
+    width:5px;
+    height:5px;
+    background-color:black;
+    border-radius:50%;
+}

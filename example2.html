@@ -1,0 +1,58 @@
+<html>
+<head>
+    <title>IMAGES GALLERY</title>
+    <style>
+        body {
+            height: 500px;
+            width: 1000px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color:brown;
+        }
+        .div-1 {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .thumbnails {
+            display: flex;
+            gap: 10px;
+            margin-top: 10px;
+        }
+        .thumbnails img {
+            height: 100px;
+            width: 150px;
+            cursor: pointer;
+        }
+        #main {
+            height: 300px;
+            width: 500px;
+        }
+    </style>
+</head>
+<body>
+    <div class="div-1">
+        <!-- Main big image -->
+        <img id="main" src="./akki.jpg" />
+
+        <!-- Thumbnails -->
+        <div class="thumbnails">
+            <img src="./akki.jpg" />
+            <img src="./akshaya.png" />
+            <img src="./chip2.png" />
+        </div>
+    </div>
+
+    <script>
+        const mainImage = document.getElementById("main");
+        const thumbnails = document.querySelectorAll(".thumbnails img");
+
+        thumbnails.forEach(thumbnail => {
+            thumbnail.addEventListener("click", () => {
+                mainImage.src = thumbnail.src;
+            });
+        });
+    </script>
+</body>
+</html>
