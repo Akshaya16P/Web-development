@@ -1,0 +1,46 @@
+<link rel="stylesheet" href="style.css">
+
+<body>
+    <header>
+        <div class="NavBar">
+            <a href="" id="navbar-title">
+                FASHION STORE
+            </a>
+        </div>
+    </header>
+
+    <!-- Update the code below this comment -->
+    <main>
+        <div class="Items">
+            <table id="item-table">
+                <!-- First row: images -->
+                <tr>
+                    <td>
+                        <img 
+                            src="https://cdn.codechef.com/download/Contest+images/ROTEST/tshirt.jpeg" 
+                            alt="T-Shirts" 
+                            class="Item-img"
+                        >
+                    </td>
+                    <td>
+                        <img 
+                            src="https://cdn.codechef.com/download/Contest+images/ROTEST/sunglasses.jpeg" 
+                            alt="Sun Glasses" 
+                            class="Item-img"
+                        >
+                    </td>
+                </tr>
+
+                <!-- Second row: text links -->
+                <tr>
+                    <td>
+                        <a href="" class="Item-tag">T-Shirts</a>
+                    </td>
+                    <td>
+                        <a href="" class="Item-tag">Sun<br>Glasses</a>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </main>
+</body>
